@@ -1,0 +1,271 @@
+#1  all natural numbers from 1 to n.
+n=int(input("enter  value of n :"))
+i=1
+while i<=n:
+    print(i)
+    i+=1
+
+#2  all natural numbers in reverse (from n to 1).
+n=int(input("enter  value of n :"))
+i=n
+while i >= 1:
+    print(i)
+    i-=1
+
+#3   all alphabets from a to z. 
+alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+             'w', 'x', 'y', 'z']
+i = 0
+while i < len(alphabets):
+    print(alphabets[i], end=" ")
+    i += 1
+  
+#4  all even numbers between 1 to 100. 
+even_numbers = range(2, 101)
+i = 0
+while i < len(even_numbers):
+    if even_numbers[i] % 2 == 0:
+        print(even_numbers[i], end=', ')
+    i += 1
+
+#5  all odd number between 1 to 100
+odd_numbers=range(1,101)
+i=0
+while i < len(odd_numbers):
+    if odd_numbers[i] % 2 != 0:
+        print(odd_numbers[i], end= ',')
+    i+=1    
+
+#6  sum of all natural numbers between 1 to n
+n = int(input("Enter  value of n: "))
+sum_of_numbers = 0
+i = 1
+while i <= n:
+    sum_of_numbers += i
+    i += 1
+print(f" sum of natural numbers from 1 to {n} is: {sum_of_numbers}")
+
+#7   sum of all even numbers between 1 to n.
+n= int(input("enter the n number "))
+even_numbers_sum= 0
+even_number_list=[]
+i=0
+while i<=n:
+    if i % 2 == 0:
+        even_numbers_sum += i
+        even_number_list.append(i)  
+    i += 1  
+print(f"sum of all even numbers '{even_number_list}' between 1 and {n} is = {even_numbers_sum}")      
+
+#8   sum of all odd numbers between 1 to n.
+n= int(input("enter the n number "))
+odd_numbers_sum= 0
+odd_number_list=[]
+i=0
+while i<=n:
+    if i % 2 != 0:
+        odd_numbers_sum += i
+        odd_number_list.append(i)  
+    i += 1  
+print(f" sum of all even numbers '{odd_number_list}' between 1 and {n} is = {odd_numbers_sum}") 
+
+#9    multiplication table of any number.
+table=int(input("enter table numble"))
+length=int(input("""enter the length untill to you want 
+                 to run the table like upto 10,20 or 30 :"""))
+for i in range(1,length+1):
+    result = i*table
+    print(f"{table} X {i} = ",result)
+
+#10   count number of digits in a number.
+number=int(input("enter the number:"))
+count=0
+while number > 0 :
+    number //= 10
+    count+=1
+
+#11  find first and last digit of a number. 
+number = int(input("Enter number  greater than 10: "))
+last_digit= number % 10
+while number >= 10:
+    number //= 10
+first_digit=number    
+print(f" first digit of  number is: {first_digit}")
+print(f" last digit of  number is: {last_digit}")
+
+#12   find sum of first and last digit of a number.
+number = int(input("Enter a number greater than 10: "))
+last_digit= number % 10
+while number >= 10:
+    number //= 10
+first_digit=number    
+sum= first_digit + last_digit
+print(f" first digit of  number is: {first_digit}")
+print(f" last digit of  number is: {last_digit}")
+print(f" sum of {first_digit} and {last_digit} = {sum}")
+
+#14  calculate sum of digits of a number
+number = int(input("Enter a number: "))
+original_number = number  
+sum_of_digits = 0
+while number > 0:
+    digit = number % 10  
+    sum_of_digits += digit  
+    number //= 10  
+
+print(f" original number: {original_number}")
+print(f" sum of digits: {sum_of_digits}")
+
+#15  calculate product of digits of a number
+number = int(input("Enter a number: "))
+original_number = number  
+product_of_digits = 1
+while number > 0:
+    digit = number % 10  
+    product_of_digits *= digit  
+    number //= 10  
+print(f" original number: {original_number}")
+print(f" product of digits: {product_of_digits}")
+
+#16  enter a number and print its reverse
+number = int(input("enter the number :"))
+reversed=0
+while number > 0 :
+    digit = number % 10
+    reversed = reversed * 10 + digit
+    number //= 10
+    
+print(f"The reversed number is = {reversed}")  
+
+#17  check whether a number is palindrome or not.
+number=int(input("enter the number"))
+number_str = str(number)
+if number_str == number_str[::-1]:
+    print(f"{number} is palindrome")
+else:
+    print(f"{number} is not palindrome")
+
+#18  find frequency of each digit in a given integer.
+number = int(input("Enter the number: "))
+frequency = [0] * 10
+
+while number > 0:
+    digit = number % 10  
+    frequency[digit] += 1  
+    number //= 10  
+
+print("Frequency of each digit in the number:")
+for digit in range(10):
+    if frequency[digit] > 0:
+        print(f"Digit {digit}: {frequency[digit]}")
+
+#19  enter a number and print it in words.
+ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+teens = ["", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
+tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+thousands = ["", "Thousand", "Million", "Billion", "Trillion"]
+
+#  convert numbers less than 1000 into words
+def less_than_thousand(num):
+    if num == 0:
+        return ""
+    elif num < 10:
+        return ones[num]
+    elif num < 20:
+        return teens[num - 10]
+    elif num < 100:
+        return tens[num // 10] + " " + ones[num % 10]
+    elif num < 999 :
+        return ones[num // 100] + " Hundred " + less_than_thousand(num % 100)
+    else:
+        print(" number is greater than or equal to 1000")
+
+number = int(input("Enter a number (less than one thousand): "))
+print("In words:", less_than_thousand(number))
+
+#20  print all ASCII character with their values.
+for i in range(128):
+    
+    print(f"ASCII Value: {i}, Character: {chr(i)}")
+
+#21  find power of a number using for loop
+
+num1 = int(input("enter  base number :"))
+num2 = int(input("enter  power number :"))
+
+def power_find (base,exponent):
+    
+    result=1
+    for _ in range(exponent):
+        
+        result *= base
+    return result
+        
+print(f"The result = ",power_find(num1,num2))    
+    
+#23  calculate factorial of a number.
+number =int(input("enter number :"))
+result=1
+for i in range(1,number+1):
+    
+    result *= i
+    i += 1
+    
+print(f"factorial of {number} = {result}") 
+
+#24  find HCF (GCD) of two numbers
+num1 = int(input("Enter  first number: "))
+num2 = int(input("Enter  second number: ")) 
+def find_hcf(num1, num2):
+    while num2:
+        num1, num2 = num2, num1 % num2
+    return num1
+hcf = find_hcf(num1, num2)
+print(f" HCF of {num1} and {num2} is: {hcf}")
+
+#25  find LCM of two numbers.
+def find_hcf(num1, num2):
+    while num2:
+        num1, num2 = num2, num1 % num2
+    return num1
+
+def lcm(a, b):
+    return (a * b) // find_hcf(a, b)
+
+num1 = int(input("Enter  first number: "))
+num2 = int(input("Enter  second number: "))
+
+hcf = find_hcf(num1, num2)
+print(f" HCF of {num1} and {num2} is: {hcf}")
+lcm_result = lcm(num1, num2)
+print(f" LCM of {num1} and {num2} is: {lcm_result}")
+
+#26  check  number is Prime number or not.
+number = int(input("Enter  number: "))
+
+if number <= 1:
+    print(number, "is not prime")
+else:
+    is_prime = True
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print(number, "is prime")
+    else:
+        print(number, "is not prime")
+
+#27  print all Prime numbers between 1 to n.
+n = int(input("Enter  number: "))
+print("Prime numbers between 1 and", n, "are:")
+for num in range(2, n + 1):
+    is_prime = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(num, end=" ")    
